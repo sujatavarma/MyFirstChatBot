@@ -2,12 +2,12 @@ from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 from tkinter import *
 
-bot = ChatBot('RutgersBot')
+bot = ChatBot('HelperBot')
 convo = [
     'hello',
     'hi there !',
     'what is your name ?',
-    'My name is Rutgers Bot , i am created by Sujata',
+    'My name is Helper Bot , i am created by Sujata',
     'how are you ?',
     'I am doing great these days',
     'thank you',
@@ -24,10 +24,10 @@ trainer.train(convo)
 
 main = Tk()
 main.geometry("500x650")
-main.title("Rutgers HelpBot")
+main.title("Helper Bot")
 
 # create image
-img = PhotoImage(file="Rutgerslogo.png")
+img = PhotoImage(file="logo.png")
 photoL = Label(main, image=img)
 photoL.pack(pady=0)
 
@@ -37,7 +37,7 @@ def ask_from_bot():
     answer_from_bot = bot.get_response(query)
     msgs.insert(END, "you : " + query)
     print(type(answer_from_bot))
-    msgs.insert(END, "Rutgers bot : " + str(answer_from_bot))
+    msgs.insert(END, "Helper bot : " + str(answer_from_bot))
     textF.delete(0, END)
     msgs.yview(END)
 
@@ -54,7 +54,7 @@ frame.pack()
 textF = Entry(main, font=("Verdana", 20))
 textF.pack(fill=X, pady=10)
 
-btn = Button(main, text="Ask from Rutgers bot", font=("Verdana", 20), command=ask_from_bot)
+btn = Button(main, text="Ask from Helper bot", font=("Verdana", 20), command=ask_from_bot)
 btn.pack()
 
 
